@@ -1,19 +1,24 @@
+import csv
+import os
+from datetime import datetime
+
 from django.shortcuts import render
 
 
 def index(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        print(f'You have new message from {name}({email}): {message}')
     return render(request, 'catalog/index.html')
 
 
 def contacts(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        email = request.POST.get('email')
+        phone = request.POST.get('phone')
         message = request.POST.get('message')
-        print(f'You have new message from {name}({email}): {message}')
-    return render(request, 'catalog/contact.html')
+        with open('data.csv', 'a', newline='') as file:
+            fieldnames = ['Date', 'Name', 'Phone', 'Message']
+            data = csv.DictWriter(file, fieldnames=fieldnames)
+            file_empty = os.stat('data.csv').st_size == 0
+            if file_empty:
+                data.writeheader()
+            data.writerow({'Date': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'Name': name, 'Phone': phone, 'Message': message})
+    return render(request, 'catalog/contacts.html')
