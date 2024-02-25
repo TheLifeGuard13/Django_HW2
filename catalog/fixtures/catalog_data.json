@@ -1,0 +1,99 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овощи",
+      "description": "Вот такая категория"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Фрукты",
+      "description": "Сладкие, полезные"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Ягоды",
+      "description": "Маленькие"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Сладости",
+      "description": "всякие сладости"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 1,
+    "fields": {
+      "name": "Помидор",
+      "description": "Красный",
+      "preview": "",
+      "category": 1,
+      "price": 200,
+      "created_at": "2024-02-25T10:25:36.501Z",
+      "updated_at": "2024-02-25T11:09:00.379Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 3,
+    "fields": {
+      "name": "Яблоко",
+      "description": "Зеленое",
+      "preview": "",
+      "category": 2,
+      "price": 50,
+      "created_at": "2024-02-25T10:26:47.138Z",
+      "updated_at": "2024-02-25T10:26:47.138Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 4,
+    "fields": {
+      "name": "Вишня",
+      "description": "Спелая вишня",
+      "preview": "",
+      "category": 2,
+      "price": 300,
+      "created_at": "2024-02-25T10:31:22.347Z",
+      "updated_at": "2024-02-25T10:31:22.347Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 5,
+    "fields": {
+      "name": "Ежевика",
+      "description": "Фиолетовая ягода",
+      "preview": "",
+      "category": 3,
+      "price": 600,
+      "created_at": "2024-02-25T10:31:52.798Z",
+      "updated_at": "2024-02-25T10:31:52.798Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 7,
+    "fields": {
+      "name": "Огурец",
+      "description": "Зелененький он был",
+      "preview": "",
+      "category": 1,
+      "price": 250,
+      "created_at": "2024-02-25T10:32:23.633Z",
+      "updated_at": "2024-02-25T10:32:23.633Z"
+    }
+  }
+]
