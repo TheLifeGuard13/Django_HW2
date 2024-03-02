@@ -4,9 +4,15 @@ from datetime import datetime
 
 from django.shortcuts import render
 
+from catalog.models import Products
+
 
 def index(request):
-    return render(request, 'catalog/index.html')
+    goods_list = Products.objects.all()
+    context = {
+        'object_list': goods_list
+    }
+    return render(request, 'catalog/index.html', context)
 
 
 def contacts(request):
@@ -22,3 +28,10 @@ def contacts(request):
                 data.writeheader()
             data.writerow({'Date': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'Name': name, 'Phone': phone, 'Message': message})
     return render(request, 'catalog/contacts.html')
+
+
+def good(request, pk):
+    context = {
+        'object': Products.objects.get(pk=pk)
+    }
+    return render(request, 'catalog/good.html', context)
