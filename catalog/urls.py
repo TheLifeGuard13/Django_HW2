@@ -1,9 +1,9 @@
 from django.urls import path
 
+from catalog.apps import MainConfig
 from catalog.views import index, contacts, good
 
-app_name = "my_catalog"
-
+app_name = MainConfig.name
 
 urlpatterns = [
     path('', index, name='homepage'),

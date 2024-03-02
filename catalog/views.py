@@ -10,9 +10,10 @@ from catalog.models import Products
 def index(request):
     goods_list = Products.objects.all()
     context = {
-        'object_list': goods_list
+        'object_list': goods_list,
+        'title': 'Главная'
     }
-    return render(request, 'catalog/index.html', context)
+    return render(request, 'catalog/index.html', context=context)
 
 
 def contacts(request):
@@ -27,11 +28,15 @@ def contacts(request):
             if file_empty:
                 data.writeheader()
             data.writerow({'Date': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'Name': name, 'Phone': phone, 'Message': message})
-    return render(request, 'catalog/contacts.html')
+    context = {
+        'title': 'Контакты'
+    }
+    return render(request, 'catalog/contacts.html', context=context)
 
 
 def good(request, pk):
     context = {
-        'object': Products.objects.get(pk=pk)
+        'object': Products.objects.get(pk=pk),
+        'title': 'Товар'
     }
-    return render(request, 'catalog/good.html', context)
+    return render(request, 'catalog/good.html', context=context)
