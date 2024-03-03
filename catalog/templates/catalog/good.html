@@ -17,10 +17,9 @@
             </div>
             <div class="card-body">
                 <img class="card-img-top" src="{{ object.preview|my_media }}">
-
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>Категория: {{ object.category }}</li>
-                    <li>Описание: {{ object.description }}</li>
+                    <li>Описание: {{ object.description | truncatechars:100 }}</li>
                     <li>Цена: {{ object.price }} руб./кг</li>
                     <li>Карточка создана: {{ object.created_at }}</li>
                     <li>Карточка обновлена: {{ object.updated_at }}</li>

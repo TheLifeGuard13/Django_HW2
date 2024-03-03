@@ -134,3 +134,4 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURES_DATA_PATH = Path(__file__).parent.parent.joinpath("catalog", "fixtures", "catalog_data.json")
+FIXTURES_DATA_PATH_NEW = Path(__file__).parent.parent.joinpath("catalog", "fixtures", "catalog_data_new.json")

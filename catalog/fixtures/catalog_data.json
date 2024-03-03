@@ -40,8 +40,8 @@
       "preview": "products/помидоры_IdlpeqI.jpg",
       "category": 1,
       "price": 120,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:59:00.078Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -53,8 +53,8 @@
       "preview": "products/яблоки_N3Pw9fs.jpeg",
       "category": 2,
       "price": 60,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:54.556Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -66,8 +66,8 @@
       "preview": "products/вишня_RhcgYqZ.jpg",
       "category": 2,
       "price": 275,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:40.641Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -79,8 +79,8 @@
       "preview": "products/ежевика_hIChFDu.jpeg",
       "category": 2,
       "price": 350,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:22.610Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -92,8 +92,8 @@
       "preview": "products/огурцы_Tz1w8EE.jpg",
       "category": 1,
       "price": 250,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:15.715Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -105,8 +105,8 @@
       "preview": "products/белыегрибы_oec8YQz.jpg",
       "category": 4,
       "price": 450,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:09.945Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -118,8 +118,8 @@
       "preview": "products/подосиновики_bMhjYQy.jpg",
       "category": 4,
       "price": 490,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:58:03.258Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -131,8 +131,8 @@
       "preview": "products/капуста_F3Ae2V7.jpg",
       "category": 1,
       "price": 20,
-      "created_at": "2024-03-02T19:54:03.899Z",
-      "updated_at": "2024-03-02T19:57:57.638Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -144,8 +144,8 @@
       "preview": "products/гречка_uLFyyVt.jpg",
       "category": 3,
       "price": 95,
-      "created_at": "2024-03-02T19:54:03.900Z",
-      "updated_at": "2024-03-02T19:57:40.487Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
@@ -157,8 +157,47 @@
       "preview": "products/манка_KFsMqCF.jpg",
       "category": 3,
       "price": 80,
-      "created_at": "2024-03-02T19:54:03.900Z",
-      "updated_at": "2024-03-02T19:57:34.196Z"
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 11,
+    "fields": {
+      "name": "Бананы",
+      "description": "Желтые, обезьяны любят",
+      "preview": "",
+      "category": 2,
+      "price": 120,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 12,
+    "fields": {
+      "name": "Пшено",
+      "description": "Крупа такая",
+      "preview": "",
+      "category": 3,
+      "price": 25,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 13,
+    "fields": {
+      "name": "Сельдерей",
+      "description": "С кровавой мэри самый раз",
+      "preview": "",
+      "category": 1,
+      "price": 245,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   }
 ]
