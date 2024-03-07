@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Овощи",
-      "description": "Вот такая категория"
+      "description": "Кулинарный термин, обозначающий съедобную часть некоторых растений, а также всякую твёрдую растительную пищу."
     }
   },
   {
@@ -12,88 +12,192 @@
     "pk": 2,
     "fields": {
       "name": "Фрукты",
-      "description": "Сладкие, полезные"
+      "description": "Съедобные сочные плоды культурных и дикорастущих растений"
     }
   },
   {
     "model": "catalog.category",
     "pk": 3,
     "fields": {
-      "name": "Ягоды",
-      "description": "Маленькие"
+      "name": "Крупы",
+      "description": "Пищевой продукт, состоящий из цельных или дроблёных зёрен различных культур"
     }
   },
   {
     "model": "catalog.category",
     "pk": 4,
     "fields": {
-      "name": "Сладости",
-      "description": "всякие сладости"
+      "name": "Грибы",
+      "description": "Царство живой природы, сочетающее в себе некоторые признаки как растений, так и животных"
     }
   },
   {
     "model": "catalog.products",
     "pk": 1,
     "fields": {
-      "name": "Помидор",
-      "description": "Красный",
-      "preview": "",
+      "name": "Помидоры",
+      "description": "Красные, сочные",
+      "preview": "products/помидоры_IdlpeqI.jpg",
       "category": 1,
-      "price": 200,
-      "created_at": "2024-02-25T10:25:36.501Z",
-      "updated_at": "2024-02-25T11:09:00.379Z"
+      "price": 120,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 2,
+    "fields": {
+      "name": "Яблоки",
+      "description": "Зеленые, спелые",
+      "preview": "products/яблоки_N3Pw9fs.jpeg",
+      "category": 2,
+      "price": 60,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
     "model": "catalog.products",
     "pk": 3,
     "fields": {
-      "name": "Яблоко",
-      "description": "Зеленое",
-      "preview": "",
+      "name": "Вишня",
+      "description": "Спелая вишня",
+      "preview": "products/вишня_RhcgYqZ.jpg",
       "category": 2,
-      "price": 50,
-      "created_at": "2024-02-25T10:26:47.138Z",
-      "updated_at": "2024-02-25T10:26:47.138Z"
+      "price": 275,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
     "model": "catalog.products",
     "pk": 4,
     "fields": {
-      "name": "Вишня",
-      "description": "Спелая вишня",
-      "preview": "",
+      "name": "Ежевика",
+      "description": "Черные ягоды",
+      "preview": "products/ежевика_hIChFDu.jpeg",
       "category": 2,
-      "price": 300,
-      "created_at": "2024-02-25T10:31:22.347Z",
-      "updated_at": "2024-02-25T10:31:22.347Z"
+      "price": 350,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
     "model": "catalog.products",
     "pk": 5,
     "fields": {
-      "name": "Ежевика",
-      "description": "Фиолетовая ягода",
-      "preview": "",
-      "category": 3,
-      "price": 600,
-      "created_at": "2024-02-25T10:31:52.798Z",
-      "updated_at": "2024-02-25T10:31:52.798Z"
+      "name": "Огурцы",
+      "description": "Зелененькие они были",
+      "preview": "products/огурцы_Tz1w8EE.jpg",
+      "category": 1,
+      "price": 250,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 6,
+    "fields": {
+      "name": "Белые грибы",
+      "description": "Только из леса",
+      "preview": "products/белыегрибы_oec8YQz.jpg",
+      "category": 4,
+      "price": 450,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   },
   {
     "model": "catalog.products",
     "pk": 7,
     "fields": {
-      "name": "Огурец",
-      "description": "Зелененький он был",
+      "name": "Подосиновики",
+      "description": "Растут под осиной",
+      "preview": "products/подосиновики_bMhjYQy.jpg",
+      "category": 4,
+      "price": 490,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 8,
+    "fields": {
+      "name": "Капуста",
+      "description": "Для борща",
+      "preview": "products/капуста_F3Ae2V7.jpg",
+      "category": 1,
+      "price": 20,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 9,
+    "fields": {
+      "name": "Гречневая крупа",
+      "description": "Самая полезная крупа",
+      "preview": "products/гречка_uLFyyVt.jpg",
+      "category": 3,
+      "price": 95,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 10,
+    "fields": {
+      "name": "Манная крупа",
+      "description": "Вкус детства",
+      "preview": "products/манка_KFsMqCF.jpg",
+      "category": 3,
+      "price": 80,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 11,
+    "fields": {
+      "name": "Бананы",
+      "description": "Желтые, обезьяны любят",
+      "preview": "",
+      "category": 2,
+      "price": 120,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 12,
+    "fields": {
+      "name": "Пшено",
+      "description": "Крупа такая",
+      "preview": "",
+      "category": 3,
+      "price": 25,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 13,
+    "fields": {
+      "name": "Сельдерей",
+      "description": "С кровавой мэри самый раз",
       "preview": "",
       "category": 1,
-      "price": 250,
-      "created_at": "2024-02-25T10:32:23.633Z",
-      "updated_at": "2024-02-25T10:32:23.633Z"
+      "price": 245,
+      "created_at": "2024-03-03T11:46:03.279Z",
+      "updated_at": "2024-03-03T11:46:03.279Z"
     }
   }
 ]
