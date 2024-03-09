@@ -19,4 +19,4 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Contacts)
 class ContactsAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'message',)
-    search_fields = ('name', )
+    search_fields = ('name', 'phone',)

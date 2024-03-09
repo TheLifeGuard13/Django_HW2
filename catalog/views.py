@@ -7,9 +7,19 @@ from catalog.models import Products, Contacts
 class ProductsListView(ListView):
     model = Products
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная страница'
+        return context
+
 
 class ProductsDetailView(DetailView):
     model = Products
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.object.name
+        return context
 
 
 class ProductsCreateView(CreateView):
@@ -33,3 +43,8 @@ class ContactsCreateView(CreateView):
     model = Contacts
     fields = ('name', 'phone', 'message',)
     success_url = reverse_lazy('catalog:homepage')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Контакты'
+        return context
