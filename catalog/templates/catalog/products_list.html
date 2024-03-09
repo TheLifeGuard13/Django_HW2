@@ -17,7 +17,7 @@
                 <h2 class="my-0 fw-normal">{{ object|title }}</h2>
             </div>
             <div class="card-body">
-                <a href="{% url 'catalog:good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">О товаре</a>
+                <a href="{% url 'catalog:view_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">О товаре</a>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
     <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-                <h2 class="my-0 fw-normal">*Свой товар</h2>
+                <h2 class="my-0 fw-normal">*Новый товар</h2>
             </div>
             <div class="card-body">
-                <a href="{% url 'catalog:add_good' %}" class="w-100 btn btn-lg btn-outline-primary">Добавить</a>
+                <a href="{% url 'catalog:add_good' %}" class="w-100 btn btn-lg btn-outline-success">Добавить</a>
             </div>
         </div>
     </div>
