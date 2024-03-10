@@ -24,7 +24,15 @@
                     <li>Карточка создана: {{ object.created_at }}</li>
                     <li>Карточка обновлена: {{ object.updated_at }}</li>
                 </ul>
-                <a href="{% url 'catalog:homepage' %}" class="w-100 btn btn-lg btn-outline-primary">Обратно</a>
+                <div class="mb-3">
+                    <a href="{% url 'catalog:update_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">Редактировать</a>
+                </div>
+                <div class="mb-3">
+                    <a href="{% url 'catalog:delete_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">Удалить</a>
+                </div>
+                <div class="mb-3">
+                    <a href="{% url 'catalog:homepage' %}" class="w-100 btn btn-lg btn-outline-primary">Обратно</a>
+                </div>
             </div>
         </div>
     </div>
