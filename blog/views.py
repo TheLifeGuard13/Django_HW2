@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from pytils.translit import slugify
 
 from blog.models import Blog
+from blog.services import send_mailing
 
 
 class BlogListView(ListView):
@@ -26,6 +27,8 @@ class BlogDetailView(DetailView):
         self.object = super().get_object(queryset)
         self.object.views_count += 1
         self.object.save()
+        if self.object.views_count == 100:
+            send_mailing(self.object.header)
         return self.object
 
     def get_context_data(self, **kwargs):
