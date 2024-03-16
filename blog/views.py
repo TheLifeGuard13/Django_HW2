@@ -27,8 +27,8 @@ class BlogDetailView(DetailView):
         self.object = super().get_object(queryset)
         self.object.views_count += 1
         self.object.save()
-        if self.object.views_count == 100:
-            send_mailing(self.object.header)
+        if self.object.views_count > 100:
+            send_mailing(self.object)
         return self.object
 
     def get_context_data(self, **kwargs):
