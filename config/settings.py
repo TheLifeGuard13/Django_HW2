@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
+from dotenv import load_dotenv
 from pathlib import Path
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_hw_3',
         'USER': 'postgres',
-        'PASSWORD': '-8Nb7AL1F7'
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD')
     }
 }
 
@@ -135,3 +137,9 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURES_DATA_PATH = Path(__file__).parent.parent.joinpath("catalog", "fixtures", "catalog_data.json")
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = os.getenv('USER_MAIL')
+EMAIL_HOST_PASSWORD = os.getenv('USER_MAIL_PASSWORD')
+EMAIL_USE_SSL = True
