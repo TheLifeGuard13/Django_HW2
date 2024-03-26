@@ -17,7 +17,14 @@
                 <h2 class="my-0 fw-normal">{{ object|capfirst }}</h2>
             </div>
             <div class="card-body">
-                <a href="{% url 'catalog:view_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">О товаре</a>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Категория: {{ object.category }}</li>
+                    <li>Версия: {{ object.active_version }}</li>
+                </ul>
+                <div class="mb-3">
+                    <a href="{% url 'catalog:view_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">О
+                        товаре</a>
+                </div>
             </div>
         </div>
     </div>
