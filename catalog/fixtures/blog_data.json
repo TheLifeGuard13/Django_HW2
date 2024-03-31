@@ -1,0 +1,80 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "header": "О пользе овощей",
+      "slug": "o-polze-ovoschej",
+      "description": "Овощи полезны",
+      "preview": "",
+      "created_at": "2024-03-09",
+      "is_active": true,
+      "views_count": 105
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 6,
+    "fields": {
+      "header": "О пользе фруктов",
+      "slug": "o-polze-fruktov",
+      "description": "Фрукты полезные",
+      "preview": "",
+      "created_at": "2024-03-09",
+      "is_active": true,
+      "views_count": 103
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 8,
+    "fields": {
+      "header": "Без фотки",
+      "slug": "bez-fotki",
+      "description": "Без фотки",
+      "preview": "",
+      "created_at": "2024-03-09",
+      "is_active": false,
+      "views_count": 0
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 9,
+    "fields": {
+      "header": "Мой блог",
+      "slug": "moj-blog",
+      "description": "Это просто мой блог с текстом.",
+      "preview": "blogs/23.jpg",
+      "created_at": "2024-03-09",
+      "is_active": true,
+      "views_count": 106
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 10,
+    "fields": {
+      "header": "Чей-то блог",
+      "slug": "chej-to-blog",
+      "description": "Просто чей-то блог без картинки",
+      "preview": "",
+      "created_at": "2024-03-09",
+      "is_active": true,
+      "views_count": 105
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 11,
+    "fields": {
+      "header": "Блог",
+      "slug": "blog",
+      "description": "Работает?",
+      "preview": "",
+      "created_at": "2024-03-14",
+      "is_active": true,
+      "views_count": 109
+    }
+  }
+]
