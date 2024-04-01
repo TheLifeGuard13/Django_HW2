@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'catalog',
     'blog',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,6 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = os.getenv('USER_MAIL')
 EMAIL_HOST_PASSWORD = os.getenv('USER_MAIL_PASSWORD')
 EMAIL_USE_SSL = True
+
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/'

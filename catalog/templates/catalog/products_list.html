@@ -20,6 +20,7 @@
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>Категория: {{ object.category }}</li>
                     <li>Версия: {{ object.active_version }}</li>
+                    <li>Создатель: {{ object.owner|default:'Не заполнено' }}</li>
                 </ul>
                 <div class="mb-3">
                     <a href="{% url 'catalog:view_good' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">О

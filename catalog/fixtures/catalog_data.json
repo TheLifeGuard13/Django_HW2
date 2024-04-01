@@ -41,20 +41,7 @@
       "category": 1,
       "price": 120,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
-    }
-  },
-  {
-    "model": "catalog.products",
-    "pk": 2,
-    "fields": {
-      "name": "Яблоки",
-      "description": "Зеленые, спелые",
-      "preview": "products/яблоки_N3Pw9fs.jpeg",
-      "category": 2,
-      "price": 60,
-      "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-24T17:14:39.089Z"
     }
   },
   {
@@ -67,7 +54,7 @@
       "category": 2,
       "price": 275,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-24T18:09:22.019Z"
     }
   },
   {
@@ -80,7 +67,7 @@
       "category": 2,
       "price": 350,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-26T16:20:10.151Z"
     }
   },
   {
@@ -89,11 +76,11 @@
     "fields": {
       "name": "Огурцы",
       "description": "Зелененькие они были",
-      "preview": "products/огурцы_Tz1w8EE.jpg",
+      "preview": "",
       "category": 1,
       "price": 250,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-08T10:44:18.149Z"
     }
   },
   {
@@ -106,7 +93,7 @@
       "category": 4,
       "price": 450,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-26T16:18:59.299Z"
     }
   },
   {
@@ -158,7 +145,7 @@
       "category": 3,
       "price": 80,
       "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "updated_at": "2024-03-26T16:20:41.148Z"
     }
   },
   {
@@ -189,15 +176,119 @@
   },
   {
     "model": "catalog.products",
-    "pk": 13,
+    "pk": 14,
+    "fields": {
+      "name": "Ананас",
+      "description": "Желтый",
+      "preview": "",
+      "category": 2,
+      "price": 405,
+      "created_at": "2024-03-08T10:31:10.065Z",
+      "updated_at": "2024-03-26T16:17:16.412Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 15,
     "fields": {
       "name": "Сельдерей",
-      "description": "С кровавой мэри самый раз",
+      "description": "Сельдь",
       "preview": "",
       "category": 1,
-      "price": 245,
-      "created_at": "2024-03-03T11:46:03.279Z",
-      "updated_at": "2024-03-03T11:46:03.279Z"
+      "price": 1000,
+      "created_at": "2024-03-09T06:43:20.109Z",
+      "updated_at": "2024-03-09T06:43:20.109Z"
+    }
+  },
+  {
+    "model": "catalog.products",
+    "pk": 16,
+    "fields": {
+      "name": "Банан",
+      "description": "желтый",
+      "preview": "products/бананы.jpg",
+      "category": 2,
+      "price": 130,
+      "created_at": "2024-03-09T08:44:57.362Z",
+      "updated_at": "2024-03-26T16:17:38.941Z"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 1,
+    "fields": {
+      "name": "Владислав",
+      "phone": "+79199926543",
+      "message": "Готов купить"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 2,
+    "fields": {
+      "name": "Vlad",
+      "phone": "+79199926543",
+      "message": "23423423"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 8,
+    "fields": {
+      "product": 4,
+      "version_number": 1,
+      "version_name": "Initial version",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 9,
+    "fields": {
+      "product": 6,
+      "version_number": 1,
+      "version_name": "Initial version",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 10,
+    "fields": {
+      "product": 10,
+      "version_number": 3,
+      "version_name": "Initial version",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 11,
+    "fields": {
+      "product": 4,
+      "version_number": 2,
+      "version_name": "Second",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 12,
+    "fields": {
+      "product": 10,
+      "version_number": 4,
+      "version_name": "Second",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 13,
+    "fields": {
+      "product": 10,
+      "version_number": 5,
+      "version_name": "Third",
+      "is_actual": false
     }
   }
 ]

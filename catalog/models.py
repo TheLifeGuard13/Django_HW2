@@ -1,5 +1,7 @@
 from django.db import models
 
+from config import settings
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Наименование')
@@ -21,6 +23,7 @@ class Products(models.Model):
     price = models.IntegerField(null=True, blank=True, verbose_name='Цена за покупку')
     created_at = models.DateTimeField(null=True, blank=True, auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(null=True, blank=True, auto_now=True, verbose_name='Дата последнего изменения')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Владелец')
 
     def __str__(self):
         return f'{self.name}'
