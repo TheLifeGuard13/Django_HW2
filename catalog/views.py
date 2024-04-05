@@ -1,9 +1,10 @@
 from django.forms import inlineformset_factory
+from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 
-from catalog.forms import ProductForm, ContactsForm, VersionForm
+from catalog.forms import ProductForm, ContactsForm, VersionForm, ProductModeratorForm
 from catalog.models import Products, Contacts, Version
 
 
@@ -39,7 +40,6 @@ class ProductsCreateView(LoginRequiredMixin, CreateView):
     model = Products
     form_class = ProductForm
     success_url = reverse_lazy('catalog:homepage')
-
     login_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
@@ -51,10 +51,35 @@ class ProductsCreateView(LoginRequiredMixin, CreateView):
 
 class ProductsUpdateView(LoginRequiredMixin, UpdateView):
     model = Products
-    form_class = ProductForm
     success_url = reverse_lazy('catalog:homepage')
-
     login_url = reverse_lazy('users:login')
+
+    def get_form_class(self):
+        if self.request.user.is_superuser and self.request.user.is_staff:
+            return ProductForm
+        elif self.request.user.groups.filter(name="moderator") and self.request.user.is_staff:
+            return ProductModeratorForm
+        else:
+            return ProductForm
+
+    def test_func(self):
+        custom_perms = (
+            "catalog.set_publication",
+            "catalog.set_category",
+            "catalog.set_description",
+        )
+
+        if self.request.user.groups.filter(name="moderator") and self.request.user.has_perms(custom_perms):
+            return True
+
+        return self.handle_no_permission()
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        user = self.request.user
+        if not user.is_superuser and self.object.owner != user and not user.is_staff and not user.groups.filter(name="moderator"):
+            raise Http404('Доступ запрещен')
+        return self.object
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -74,11 +99,14 @@ class ProductsUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class ProductsDeleteView(LoginRequiredMixin, DeleteView):
+class ProductsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Products
     success_url = reverse_lazy('catalog:homepage')
 
     login_url = reverse_lazy('users:login')
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 class ContactsCreateView(CreateView):

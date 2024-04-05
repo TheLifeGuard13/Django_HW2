@@ -11,5 +11,8 @@
         <a class="p-2 btn btn-outline-danger" href="{% url 'users:login' %}">Войти</a>
         <a class="p-2 btn btn-outline-danger" href="{% url 'users:register' %}">Регистрация</a>
         {% endif %}
+        {% if user.is_superuser or user.is_staff %}
+        <a class="p-2 btn btn-outline-warning" href="/admin">Админка</a>
+        {% endif %}
     </nav>
 </div>

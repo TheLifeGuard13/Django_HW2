@@ -19,6 +19,7 @@
         </div>
     </div>
     {% endfor %}
+    {% if perms.blog.add_blog %}
     <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
@@ -29,6 +30,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}

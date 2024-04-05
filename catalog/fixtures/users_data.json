@@ -1,0 +1,48 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$SL2ff1ZOvkf5gdUopS1rgV$oZrjLOjDWnL1NtNsBGqQzIiIUQYgUVIGVjVxj9AbrBk=",
+      "last_login": "2024-04-05T19:44:34.524Z",
+      "is_superuser": true,
+      "first_name": "vlad",
+      "last_name": "morozov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-03-30T14:03:18Z",
+      "email": "morozov90vlad@mail.ru",
+      "phone": null,
+      "avatar": "",
+      "country": null,
+      "auth_token": null,
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$fJppQYYN0qeGElg58m9k1f$8V6LyXLmgF2ijP3Dj1C1AezQyE1cSlHHPAwBy7t6yQ0=",
+      "last_login": "2024-04-05T19:45:28.153Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-03-31T09:48:52Z",
+      "email": "nastyamoroz3110@yandex.ru",
+      "phone": null,
+      "avatar": "",
+      "country": null,
+      "auth_token": "54DXG",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  }
+]

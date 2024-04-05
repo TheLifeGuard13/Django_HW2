@@ -17,12 +17,16 @@
                     <li>Дата создания: {{ object.created_at }}</li>
                     <li>Просмотры: {{ object.views_count }}</li>
                 </ul>
+                {% if perms.blog.update_blog %}
                 <div class="mb-3">
                     <a href="{% url 'blog:update_blog' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">Редактировать</a>
                 </div>
+                {% endif %}
+                {% if perms.blog.delete_blog %}
                 <div class="mb-3">
                     <a href="{% url 'blog:delete_blog' object.pk %}" class="w-100 btn btn-lg btn-outline-primary">Удалить</a>
                 </div>
+                {% endif %}
                 <div class="mb-3">
                     <a href="{% url 'blog:blog_homepage' %}" class="w-100 btn btn-lg btn-outline-primary">Обратно</a>
                 </div>
