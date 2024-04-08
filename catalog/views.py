@@ -55,12 +55,9 @@ class ProductsUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('users:login')
 
     def get_form_class(self):
-        if self.request.user.is_superuser and self.request.user.is_staff:
-            return ProductForm
-        elif self.request.user.groups.filter(name="moderator") and self.request.user.is_staff:
+        if self.request.user.groups.filter(name="moderator"):
             return ProductModeratorForm
-        else:
-            return ProductForm
+        return ProductForm
 
     def test_func(self):
         custom_perms = (
