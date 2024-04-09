@@ -3,6 +3,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 
+from blog.forms import BlogForm
 from blog.models import Blog
 from blog.services import send_mailing
 
@@ -40,7 +41,7 @@ class BlogDetailView(DetailView):
 
 class BlogCreateView(PermissionRequiredMixin, CreateView):
     model = Blog
-    fields = ('header', 'description', 'preview', 'is_active', )
+    form_class = BlogForm
     success_url = reverse_lazy('blog:blog_homepage')
     permission_required = 'blog.add_blog'
 
@@ -59,7 +60,7 @@ class BlogCreateView(PermissionRequiredMixin, CreateView):
 
 class BlogUpdateView(PermissionRequiredMixin, UpdateView):
     model = Blog
-    fields = ('header', 'description', 'preview', 'is_active', )
+    form_class = BlogForm
     permission_required = 'blog.change_blog'
 
     def form_valid(self, form):

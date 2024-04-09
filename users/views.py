@@ -1,13 +1,13 @@
+from django.conf import settings
 from django.contrib.auth import logout
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView, TemplateView
 
-from config import settings
 from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User
-from users.services import generating_keys
+from users.services import generating_keys, send_registration_mail, send_password_mail
 
 
 def logout_view(request):
@@ -26,12 +26,7 @@ class RegisterView(CreateView):
         new_user.is_active = False
         new_user.auth_token = generating_keys(5)
         new_user.save()
-        send_mail(
-            subject='Регистрация',
-            message=f"Вот ваш ключ: {new_user.auth_token}\nФорму ввода можно найти по ссылке: {current_site}/users/verification",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[new_user.email],
-        )
+        send_registration_mail(new_user, current_site)
 
         return super().form_valid(form)
 
@@ -81,12 +76,7 @@ class RestorePassword(TemplateView):
         mail = request.POST.get("email")
         user = get_object_or_404(User, email=mail)
         new_password = generating_keys(15)
-        send_mail(
-                    subject="Смена пароля",
-                    message=f'Ваш новый пароль: {new_password}',
-                    from_email=settings.EMAIL_HOST_USER,
-                    recipient_list=[user.email],
-                )
+        send_password_mail(user, new_password)
         user.set_password(new_password)
         user.save()
         return redirect('users:login')
