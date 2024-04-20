@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.cache import cache
 from django.forms import inlineformset_factory
 from django.http import Http404
 from django.urls import reverse_lazy
@@ -5,7 +7,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 
 from catalog.forms import ProductForm, ContactsForm, VersionForm, ProductModeratorForm
-from catalog.models import Products, Contacts, Version
+from catalog.models import Products, Contacts, Version, Category
+from catalog.services import get_categories_cash
 
 
 class ProductsListView(ListView):
@@ -13,6 +16,7 @@ class ProductsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context['title'] = 'Главная страница'
 
         products = Products.objects.all()
@@ -25,6 +29,18 @@ class ProductsListView(ListView):
                 product.active_version = "Без версии"
         context['object_list'] = products
         return context
+
+    def get_queryset(self, *args, **kwargs):
+        if settings.CASH_ENABLED:
+            cache_key = f'products_list'
+            queryset = cache.get(cache_key)
+            if queryset is None:
+                queryset = super().get_queryset(*args, **kwargs)
+                cache.set(cache_key, queryset, 60)
+        else:
+            queryset = super().get_queryset(*args, **kwargs)
+
+        return queryset
 
 
 class ProductsDetailView(DetailView):
@@ -115,3 +131,15 @@ class ContactsCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Контакты'
         return context
+
+
+class CategoriesListView(ListView):
+    model = Category
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['object_list'] = get_categories_cash()
+        context['title'] = 'Категории'
+        return context
+
